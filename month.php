@@ -4,7 +4,7 @@
     <title>ตรวจสอบจำนวนวันในเดือน</title>
 </head>
 <body>
-    <h2>กรุณากรอกชื่อเดือน (ภาษาไทย)</h2>
+    <h2>กรุณากรอกชื่อเดือน</h2>
     <form method="get" action="">
         <label for="month">เดือน:</label>
         <input type="text" name="month" id="month" required>
@@ -14,7 +14,7 @@
     <?php
     if (isset($_GET['month'])) {
         $month = trim($_GET['month']);
-        $month = mb_strtolower($month, "UTF-8"); // แปลงเป็นตัวพิมพ์เล็ก (รองรับภาษาไทย)
+        $month = mb_strtolower($month, "UTF-8"); 
 
         echo "<h3>ผลลัพธ์:</h3>";
 
@@ -35,7 +35,7 @@
                 echo "เดือน $month มี 30 วัน";
                 break;
             case "กุมภาพันธ์":
-                echo "เดือน $month มี 28 หรือ 29 วัน (ขึ้นอยู่กับปีอธิกสุรทิน)";
+                echo "เดือน $month มี 28 หรือ 29 วัน";
                 break;
             default:
                 echo "ไม่รู้จักชื่อเดือน: $month กรุณากรอกใหม่ เช่น มกราคม, กุมภาพันธ์ ฯลฯ";
